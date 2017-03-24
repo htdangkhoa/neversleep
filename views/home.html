@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Neversleep</title>
+	<link rel="shortcut icon" type="image/png" href="./favicon.png"/>
+
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+
+	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" type="text/css" href="node_modules/purecss/build/pure-min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+	<script type="text/javascript" src="js/home.js"></script>
+</head>
+<body>
+	<div class="container">
+		<a href="/" style="font-size: 32px; font-style: italic; color: #555; text-decoration: none;">Keep your server never <span style="color: #F64444;">sleep</span>!!!</a>
+		<br/><br/>
+		<center>
+			<div class="form">
+				<form class="pure-form">
+				    <fieldset>
+				        <input id="input_url" type="url" placeholder="Domain" autofocus>
+				        <input id="input_email" type="email" placeholder="Email">
+				    </fieldset>
+				</form>
+				<button class="pure-button pure-button-primary" onclick="monitoring()">Monitoring</button>
+				<div class="response"></div>
+			</div>
+		</center>
+		<div id="info" style="margin-bottom: 150px;">
+			<span>
+				There 
+				<% if (sum > 1) { %>
+					are <b><%= sum %></b> domains 
+				<% }else { %>
+					is <b><%= sum %></b> domain 
+				<% } %>
+				
+				using Nerversleep service. Thank you for sharing.
+			</span>
+			<a href="" id="btn_remove" data-toggle="modal" data-target="#myModal" style="outline: none;">Remove your domain?</a>
+			<div>
+				<a class="github-button" href="https://github.com/htdangkhoa/monitor" data-style="mega" aria-label="View on GitHub">View on Github</a>
+				
+				<a class="github-button" href="https://github.com/htdangkhoa/monitor" data-icon="octicon-star" data-style="mega" data-count-href="/htdangkhoa/monitor/stargazers" data-count-api="/repos/htdangkhoa/monitor#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star htdangkhoa/monitor on GitHub">Star</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-body">
+					<form class="pure-form">
+					    <fieldset>
+					        <input id="input_url_remove" type="url" placeholder="Domain" autofocus style="width: 100%;">
+					    </fieldset>
+					</form>
+					<button class="pure-button pure-button-error" onclick="stopMonitoring()" style="width: 100%;">Stop</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

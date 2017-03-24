@@ -1,0 +1,26 @@
+{
+  "name": "monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm install && nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.7",
+    "cors": "^2.8.1",
+    "curl": "^0.1.4",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "is-email": "^1.0.0",
+    "is-url": "^1.2.2",
+    "jquery": "^3.2.0",
+    "mongoose": "^4.9.1",
+    "nodemailer": "^3.1.7",
+    "nodemon": "^1.11.0",
+    "purecss": "^0.6.2"
+  }
+}
