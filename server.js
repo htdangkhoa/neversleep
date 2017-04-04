@@ -3,13 +3,16 @@ var config = require("./config"),
 	cors = require("cors"),
 	ejs = require("ejs"),
 	mongoose = require("mongoose"),
+	compression = require("compression"),
 	express = require("express");
 
 var port =  process.env["PORT"] || 5000;
 
-mongoose.connect(config.database);
+// mongoose.connect(config.database_dev);
+mongoose.connect(config.database_prod);
 
 var app = express();
+app.use(compression());
 app.use(express.static(__dirname + "/"));
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }))
