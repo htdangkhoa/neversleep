@@ -162,17 +162,6 @@ function pingDomains() {
 						});
 					}
 				}
-
-				if (!response) {
-					console.log("404:", domain["domain"]);
-				}else {
-					console.log(response.statusCode + ":", domain["domain"]);
-				}
-
-				if (!error) {
-					domain["canPing"] = true;
-					domain.save();
-				}
 			});
 		});
 	}, function(error) {
