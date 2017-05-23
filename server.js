@@ -8,8 +8,7 @@ var config = require("./config"),
 
 var port =  process.env["PORT"] || 5000;
 
-// mongoose.connect(config.database_dev);
-mongoose.connect(config.database_prod);
+mongoose.connect(config.database);
 
 var app = express();
 app.use(compression());

@@ -9,8 +9,8 @@ var nodemailer = require("nodemailer");
 var transporter = nodemailer.createTransport({
 	service: "gmail",
 	auth: {
-		user: "teddyscript7896@gmail.com",
-		pass: "Dangkhoa*7896"
+		user: <email>,
+		pass: <password>
 	}
 });
 
@@ -143,22 +143,24 @@ function pingDomains() {
 		domains.forEach(function(domain) {
 			curl.get(domain["domain"], {
 				timeout: 300000
-			}, function(error, response) {
-				if (error && domain["canPing"]) {
-					var time = new Date();
+			}, function(error, response, body) {
+				if ((parseInt((response.statusCode/100)) == 4) || (parseInt((response.statusCode/100)) == 5)) {
+					if (domain["canPing"]) {
+						var time = new Date();
 
-					transporter.sendMail({
-						from: "Neversleep <teddyscript7896@gmail.com>",
-						to: domain["email"],
-						subject: "",
-						html: '<!DOCTYPE html><html><head></head><body><h2>Problem with your domain.</h2><p><span style="font-size: 12pt;">Hi there.</span></p><p><span style="font-size: 12pt;">Today ' + time.toLocaleString().replace(",", "") +', it looks like your domain: "' + domain["domain"] + '" is having a problem.</span></p><p><span style="font-size: 12pt;">If possible, please check again and come back to us.</span></p><p><br /><span style="font-size: 10pt;">Thank you for using our service.</span></p></body></html>'
-					}, function(err, info) {
-						if (err) return console.log(err);
+						transporter.sendMail({
+							from: "Neversleep <teddyscript7896@gmail.com>",
+							to: domain["email"],
+							subject: "",
+							html: '<!DOCTYPE html><html><head></head><body><h2>Problem with your domain.</h2><p><span style="font-size: 12pt;">Hi there.</span></p><p><span style="font-size: 12pt;">Today ' + time.toLocaleString().replace(",", "") +', it looks like your domain: "' + domain["domain"] + '" is having a problem.</span></p><p><span style="font-size: 12pt;">If possible, please check again and come back to us.</span></p><p><br /><span style="font-size: 10pt;">Thank you for using our service.</span></p></body></html>'
+						}, function(err, info) {
+							if (err) return console.log(err);
 
-						domain["canPing"] = false;
-						domain.save();
-						return console.log(info);
-					});
+							domain["canPing"] = false;
+							domain.save();
+							return console.log(info);
+						});
+					}
 				}
 
 				if (!response) {

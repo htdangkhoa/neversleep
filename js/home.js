@@ -1,5 +1,5 @@
-var BASE_HOST = "https://neversleep.herokuapp.com";
-// var BASE_HOST = "http://localhost:5000";
+// var BASE_HOST = "https://neversleep.herokuapp.com";
+var BASE_HOST = "http://localhost:5000";
 var http = new XMLHttpRequest();
 
 $(document).ready(function(){
