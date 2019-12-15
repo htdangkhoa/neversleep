@@ -1,4 +1,7 @@
 # Neversleep  
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/htdangkhoa/neversleep.svg)](https://greenkeeper.io/)
+
 Keep your server never sleep
 
 # Screenshot  
