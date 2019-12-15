@@ -10,18 +10,18 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.4.1",
     "compression": "^1.6.2",
     "cors": "^2.8.1",
     "curl": "^0.1.4",
-    "ejs": "^2.5.6",
+    "ejs": "^3.0.1",
     "express": "^4.15.2",
     "is-email": "^1.0.0",
     "is-url": "^1.2.2",
     "jquery": "^3.2.0",
-    "mongoose": "^4.9.1",
-    "nodemailer": "^3.1.7",
-    "nodemon": "^1.11.0",
-    "purecss": "^0.6.2"
+    "mongoose": "^5.8.1",
+    "nodemailer": "^6.4.2",
+    "nodemon": "^2.0.2",
+    "purecss": "^1.0.1"
   }
 }
